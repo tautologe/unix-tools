@@ -1,0 +1,13 @@
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --graph --full-history --all --color --date=short \
+        --pretty=format:'%C(auto)%h%d %Cgreen[%<(8,trunc)%an %ad]%Creset %s'
+  type = cat-file -t
+  dump = cat-file -p
+  meld = difftool -d
+  
+[diff]
+	tool = meld
