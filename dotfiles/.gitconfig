@@ -9,6 +9,26 @@
   type = cat-file -t
   dump = cat-file -p
   meld = difftool -d
+  # search in log messages
+  g = grep --extended-regexp --break --heading --line-number
+  search = log --no-merges -i -E --pretty='%h (%ad) - [%an] %s %d' --date=format:'%b %d %Y' --grep
   
 [diff]
 	tool = meld
+
+[color "diff"]
+  meta = yellow bold ul
+  frag = cyan bold ul
+  old = red bold
+  new = green bold 
+
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  untracked = red bold
+
+[grep]
+  break = true
+  heading = true
+  lineNumber = true
+  
