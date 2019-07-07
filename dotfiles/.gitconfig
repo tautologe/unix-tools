@@ -12,6 +12,10 @@
   # search in log messages
   g = grep --extended-regexp --break --heading --line-number
   search = log --no-merges -i -E --pretty='%h (%ad) - [%an] %s %d' --date=format:'%b %d %Y' --grep
+
+  # change author or mail address of commits, see https://stackoverflow.com/a/11768843
+  change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [ \\\"$`echo $VAR`\\\" = '$OLD' ]; then export $VAR='$NEW'; fi\" $@; }; f "
+
   
 [diff]
 	tool = meld
