@@ -17,6 +17,7 @@ Create video from images (requires images named `image-1.jpg`, `image-2.jpg`, ..
 
 `ffmpeg -framerate 4 -i image-%00d.jpg -c:v libx264 -s hd720 -pix_fmt yuv420p output.mp4`
 
+http://trac.ffmpeg.org/wiki/Slideshow
 
 Rename photos according to date:
 
