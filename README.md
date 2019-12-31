@@ -16,6 +16,10 @@ Networking:
 
 # Useful commands
 
+Create pdf from images:
+
+`convert *.jpg -compress jpeg -resize 1240x1753 -units PixelsPerInch -density 150x150 -page a4 output.pdf` 
+
 Create video from images (requires images named `image-1.jpg`, `image-2.jpg`, ...):
 
 `ffmpeg -framerate 4 -i image-%00d.jpg -c:v libx264 -s hd720 -pix_fmt yuv420p output.mp4`
