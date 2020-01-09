@@ -50,3 +50,12 @@ http://trac.ffmpeg.org/wiki/Slideshow
 
 `exiftool -r '-FileName<CreateDate' -d 'IMG_%Y%m%d_%H%M%S%%-c.jpg' .`
 
+**Add EXIF-date as watermark to image**
+
+```shell
+ImageFilename="image.jpg"
+DateTimeOriginal=`exiftool -d "%d.%m.%Y" -DateTimeOriginal -S -s $ImageFilename`
+echo "$DateTimeOriginal" # 29.04.2016
+convert -resize 3264x1836! -font Helvetica-Bold -pointsize 140 -fill white -draw "text 0, 1816 '$DateTimeOriginal'" "$ImageFilename" "watermark_$ImageFilename"
+```
+More controls: https://www.hagenfragen.de/programmieren/bash/wasserzeichen-und-exif-datum-in-bilder-einbetten.html
