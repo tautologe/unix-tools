@@ -28,6 +28,11 @@ Networking:
 find . -name "*.xml" -exec md5sum {} \; | sort
 ```
 
+* Sync folder for incremental backup; deleting obsolete files in backup (preserving them in DELETED_FILES/ for observation)
+```
+rsync -a --delete --info=progress2 --backup-dir=DELETED_FILES/ /run/media/user/source/folder/ /run/media/user/target/folder/
+```
+
 ## Images
 
 **Create pdf from images:**
