@@ -13,6 +13,8 @@ Networking:
 * mtr (combines tracepath and ping)
 * httpie (curl replacement): `apt install httpie`, https://github.com/jakubroztocil/httpie
 
+Other
+* shellcheck (check shell scripts for common errors): https://www.shellcheck.net/
 
 ## Historic tools
 * ed, 1969 (https://sanctum.geek.nz/arabesque/actually-using-ed/)
