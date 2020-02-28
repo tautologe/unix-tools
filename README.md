@@ -16,6 +16,11 @@ Networking:
 Other
 * shellcheck (check shell scripts for common errors): https://www.shellcheck.net/
 
+## Howto
+
+* Unix as an IDE https://sanctum.geek.nz/arabesque/series/unix-as-ide/
+* Writing safe shell scripts https://sipb.mit.edu/doc/safe-shell/
+
 ## Historic tools
 * ed, 1969 (https://sanctum.geek.nz/arabesque/actually-using-ed/)
 * ex/vi, 1976 (https://sanctum.geek.nz/arabesque/using-more-of-ex/)
