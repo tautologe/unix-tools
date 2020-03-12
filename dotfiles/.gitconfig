@@ -4,6 +4,7 @@
   ci = commit
   st = status
   br = branch
+  mm = merge origin/master
   hist = log --graph --full-history --all --color --date=short \
         --pretty=format:'%C(auto)%h%d %Cgreen[%<(8,trunc)%an %ad]%Creset %s'
   type = cat-file -t
