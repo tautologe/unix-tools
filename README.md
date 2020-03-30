@@ -40,7 +40,7 @@ find . -name "*.xml" -exec md5sum {} \; | sort
 rsync -ab --delete --info=progress2 --backup-dir=../DELETED_FILES/ /run/media/user/source/folder/ /run/media/user/target/folder/
 ```
 
-## Images
+## Images, Audio, Video
 
 **Create pdf from images:**
 
@@ -71,3 +71,15 @@ echo "$DateTimeOriginal" # 29.04.2016
 convert -resize 3264x1836! -font Helvetica-Bold -pointsize 140 -fill white -draw "text 0, 1816 '$DateTimeOriginal'" "$ImageFilename" "watermark_$ImageFilename"
 ```
 More controls: https://www.hagenfragen.de/programmieren/bash/wasserzeichen-und-exif-datum-in-bilder-einbetten.html
+
+**Concat mp3 files, keep id3 data**
+```shell
+# create filelist (concatlist.txt)
+for f in ./*.mp3; do echo "file '$f'" >> concatlist.txt; done
+
+# extract id3-tag from first file (id3.txt)
+ffmpeg -i "$(ls *.mp3 | head -1)" -f ffmetadata id3.txt
+
+# concat files from concatlist using id3 data from file, write to output.mp3
+ffmpeg -f concat -safe 0 -i concatlist.txt -i id3.txt -map_metadata 1 -id3v2_version 3 -write_id3v1 1 -c copy  "output.mp3"
+```
