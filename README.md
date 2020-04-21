@@ -15,6 +15,7 @@ Networking:
 
 Other
 * shellcheck (check shell scripts for common errors): https://www.shellcheck.net/
+* explainshell (enter command and get man page extract for parameters): https://explainshell.com/
 
 ## Howto
 
@@ -38,6 +39,12 @@ find . -name "*.xml" -exec md5sum {} \; | sort
 * Sync folder for incremental backup; deleting obsolete files in backup, preserving them in ../DELETED_FILES/ (relative to the target dir) for observation
 ```
 rsync -ab --delete --info=progress2 --backup-dir=../DELETED_FILES/ /run/media/user/source/folder/ /run/media/user/target/folder/
+```
+
+* find the 10 biggest files in subfolders (with zsh globbing)
+```zsh
+#!/usr/bin/zsh
+ls -hlS **/*(.OL[1,10])
 ```
 
 ## Images, Audio, Video
