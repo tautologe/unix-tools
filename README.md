@@ -4,6 +4,7 @@
 
 Files:
 * exa (ls replacement): https://github.com/ogham/exa
+* broot (directory navigation): https://github.com/Canop/broot
 * fzf (fuzzy file finder): https://github.com/junegunn/fzf
 * fd (find replacement): https://github.com/sharkdp/fd
 * bat (cat replacement): https://github.com/sharkdp/bat

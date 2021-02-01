@@ -1,7 +1,7 @@
 #/bin/bash
 
-SOURCE_FOLDER="source"
-OUTPUT_PARENT="result"
+SOURCE_FOLDER=$1
+OUTPUT_PARENT="compressed"
 
 maximum_img_size_kb=1000
 maximum_video_size_kb=10000
@@ -18,17 +18,14 @@ do
     
     actualsize=$(du -k "$file" | cut -f 1)
     if [ $actualsize -ge $maximum_img_size_kb ]; then
-        echo "Converting $file with size ($actualsize KB)"
-        identify -format "%wx%h" "$file"
-        echo " to "        
+        echo "Converting $file with size ($actualsize KB)..."
+        # TODO resize to max 1920 height or width
         convert "$file" -resize 1920\> "$OUTPUT_PARENT/$file"
-        identify -format "%wx%h" "$OUTPUT_PARENT/$file"
+        echo "Converted file $file $(identify -format "%wx%h" "$file") to $(identify -format "%wx%h" "$OUTPUT_PARENT/$file")"
     else
         echo "Copy $file with size ($actualsize KB)"
         cp "$file" "$OUTPUT_PARENT/$file"
     fi
-    
-    echo "Done."
 done
 
 image_duration=$SECONDS
@@ -42,7 +39,6 @@ do
     mkdir -p "$result_dir" 
     
     actualsize=$(du -k "$file" | cut -f 1)
-    #echo "copy $file ($actualsize KB) to $OUTPUT_PARENT/$file" 
     if [ $actualsize -ge $maximum_video_size_kb ]; then        
         echo "Converting $file with size ($actualsize KB)"
         # < /dev/null is needed to avoid ffmpeg screwing up with std input
@@ -50,8 +46,7 @@ do
         # -loglevel error to avoid printing too much information
         # -y to overwrite existing files, set to -n instead if existing files should not be overwritten
         # See https://trac.ffmpeg.org/wiki/Scaling for more information        
-        < /dev/null ffmpeg -i "$file" -vf "scale='min(640,iw)':-2" -loglevel error -y "$OUTPUT_PARENT/$file"
-        echo "Done."
+        < /dev/null ffmpeg -i "$file" -vf "scale='min(640,iw)':-2" -loglevel error -n "$OUTPUT_PARENT/$file"
     else
         echo "Copy $file with size ($actualsize KB)"
         cp "$file" "$OUTPUT_PARENT/$file"
@@ -63,5 +58,4 @@ echo "Finished at $(date)"
 overall_duration=$SECONDS
 
 echo "Processing images and videos took $(($overall_duration / 60)) minutes"
-
 
