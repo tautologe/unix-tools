@@ -2,6 +2,8 @@
 
 ## Modern tools
 
+https://github.com/ibraheemdev/modern-Unix
+
 Files:
 * exa (ls replacement): https://github.com/ogham/exa
 * broot (directory navigation): https://github.com/Canop/broot
