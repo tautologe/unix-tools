@@ -54,7 +54,21 @@ ls -hlS **/*(.OL[1,10])
 
 **Create pdf from images:**
 
-`convert *.jpg -compress jpeg -resize 1240x1753 -units PixelsPerInch -density 150x150 -page a4 output.pdf` 
+`convert *.jpg -compress jpeg -resize 1240x1753 -units PixelsPerInch -density 150x150 -page a4 output.pdf`
+
+**Remove password protection from pdfs:**
+
+* expects qpdf to be installed
+* adapt password in this command
+* looks for pdfs in same directory, creates out-Folder and puts unencrypted pdfs there
+
+```sh
+#!/bin/sh
+mkdir -p out/
+find . -maxdepth 1 -type f -iname '*.pdf' -printf '%f\0' | xargs -0 -I '{}' qpdf --password="secret"  --decrypt '{}' out/'{}'
+```
+
+
 
 **Create video from images (requires images named `image-1.jpg`, `image-2.jpg`, ...):**
 
