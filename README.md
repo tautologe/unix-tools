@@ -28,6 +28,7 @@ Other
 ## Historic tools
 * ed, 1969 (https://sanctum.geek.nz/arabesque/actually-using-ed/)
 * ex/vi, 1976 (https://sanctum.geek.nz/arabesque/using-more-of-ex/)
+* Unix command line conventions over time (https://blog.liw.fi/posts/2022/05/07/unix-cli/)
 
 
 # Useful commands
