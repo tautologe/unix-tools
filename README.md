@@ -44,6 +44,8 @@ find . -name "*.xml" -exec md5sum {} \; | sort
 ```
 rsync -ab --delete --info=progress2 --backup-dir=../DELETED_FILES/ /run/media/user/source/folder/ /run/media/user/target/folder/
 ```
+  * Save disk space using hard links for incremental backups: https://linuxconfig.org/how-to-create-incremental-backups-using-rsync-on-linux
+
 
 * find the 10 biggest files in subfolders (with zsh globbing)
 ```zsh
