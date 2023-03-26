@@ -11,6 +11,7 @@ Files:
 * fd (find replacement): https://github.com/sharkdp/fd
 * bat (cat replacement): https://github.com/sharkdp/bat
 * rg (grep replacement) https://github.com/BurntSushi/ripgrep
+* fdupes (finding duplicated files) https://github.com/adrianlopezroche/fdupes
 
 Networking:
 * mtr (combines tracepath and ping)
