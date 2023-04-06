@@ -21,16 +21,24 @@ Other
 * shellcheck (check shell scripts for common errors): https://www.shellcheck.net/
 * explainshell (enter command and get man page extract for parameters): https://explainshell.com/
 
-## Howto
-
-* Unix as an IDE https://sanctum.geek.nz/arabesque/series/unix-as-ide/
-* Writing safe shell scripts https://sipb.mit.edu/doc/safe-shell/
-
 ## Historic tools
 * ed, 1969 (https://sanctum.geek.nz/arabesque/actually-using-ed/)
 * ex/vi, 1976 (https://sanctum.geek.nz/arabesque/using-more-of-ex/)
 * Unix command line conventions over time (https://blog.liw.fi/posts/2022/05/07/unix-cli/)
 * What exactly is TTY? https://www.sobyte.net/post/2022-05/tty/
+
+# Learning
+## Howto
+
+* Unix as an IDE https://sanctum.geek.nz/arabesque/series/unix-as-ide/
+* Writing safe shell scripts https://sipb.mit.edu/doc/safe-shell/
+* Tmux Tutorial https://leimao.github.io/blog/Tmux-Tutorial/
+
+## Gamification
+
+* https://cmdchallenge.com/
+* https://overthewire.org/wargames/
+
 
 # Useful commands
 ## Filesystem
