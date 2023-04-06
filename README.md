@@ -17,10 +17,6 @@ Networking:
 * mtr (combines tracepath and ping)
 * httpie (curl replacement): `apt install httpie`, https://github.com/jakubroztocil/httpie
 
-Other
-* shellcheck (check shell scripts for common errors): https://www.shellcheck.net/
-* explainshell (enter command and get man page extract for parameters): https://explainshell.com/
-
 ## Historic tools
 * ed, 1969 (https://sanctum.geek.nz/arabesque/actually-using-ed/)
 * ex/vi, 1976 (https://sanctum.geek.nz/arabesque/using-more-of-ex/)
@@ -38,6 +34,10 @@ Other
 
 * https://cmdchallenge.com/
 * https://overthewire.org/wargames/
+
+## Other
+* shellcheck (check shell scripts for common errors): https://www.shellcheck.net/
+* explainshell (enter command and get man page extract for parameters): https://explainshell.com/
 
 
 # Useful commands
