@@ -119,3 +119,8 @@ ffmpeg -i "$(ls *.mp3 | head -1)" -f ffmetadata id3.txt
 # concat files from concatlist using id3 data from file, write to output.mp3
 ffmpeg -f concat -safe 0 -i concatlist.txt -i id3.txt -map_metadata 1 -id3v2_version 3 -write_id3v1 1 -c copy  "output.mp3"
 ```
+
+**Links how to edit Audio Meta Data**
+
+* https://www.baeldung.com/linux/editing-mp3-tags
+* https://www.baeldung.com/linux/terminal-music-add-album-art
