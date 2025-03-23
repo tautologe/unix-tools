@@ -108,6 +108,12 @@ convert -resize 3264x1836! -font Helvetica-Bold -pointsize 140 -fill white -draw
 ```
 More controls: https://www.hagenfragen.de/programmieren/bash/wasserzeichen-und-exif-datum-in-bilder-einbetten.html
 
+**Remove Exif Data from image
+
+```shell
+exiftool -all= image.jpg
+```
+
 **Concat mp3 files, keep id3 data**
 ```shell
 # create filelist (concatlist.txt)
